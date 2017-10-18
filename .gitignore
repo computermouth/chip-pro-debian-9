@@ -1,0 +1,6 @@
+binary/
+chroot/
+local
+.build
+auto
+cache
