@@ -1,8 +1,8 @@
 # config/binary - options for live-build(7), binary stage
 
 # $LB_BINARY_FILESYSTEM: set image filesystem
-# (Default: fat32)
-LB_BINARY_FILESYSTEM="fat32"
+# (Default: none)
+LB_BINARY_FILESYSTEM="none"
 
 # $LB_APT_INDICES: set apt/aptitude generic indices
 # (Default: false)

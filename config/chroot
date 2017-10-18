@@ -1,8 +1,8 @@
 # config/chroot - options for live-build(7), chroot stage
 
 # $LB_CHROOT_FILESYSTEM: set chroot filesystem
-# (Default: squashfs)
-LB_CHROOT_FILESYSTEM="squashfs"
+# (Default: none)
+LB_CHROOT_FILESYSTEM="none"
 
 # $LB_UNION_FILESYSTEM: set union filesystem
 # (Default: overlay)
