@@ -61,13 +61,13 @@ LB_MIRROR_BINARY_SECURITY="http://security.debian.org/"
 LB_MIRROR_DEBIAN_INSTALLER="http://ftp.debian.org/debian/"
 
 # $LB_BOOTSTRAP_QEMU_ARCHITECTURES: architectures to use foreign bootstrap
-# (Default: )
-LB_BOOTSTRAP_QEMU_ARCHITECTURES=""
+# (Default: armhf)
+LB_BOOTSTRAP_QEMU_ARCHITECTURES="armhf"
 
 # $LB_BOOTSTRAP_QEMU_EXCLUDE: packages to exclude during foreign bootstrap
 # (Default: )
 LB_BOOTSTRAP_QEMU_EXCLUDE=""
 
 # $LB_BOOTSTRAP_QEMU_STATIC: static qemu binary for foreign bootstrap
-# (Default: )
-LB_BOOTSTRAP_QEMU_STATIC=""
+# (Default: /usr/bin/qemu-arm-static)
+LB_BOOTSTRAP_QEMU_STATIC="/usr/bin/qemu-arm-static"

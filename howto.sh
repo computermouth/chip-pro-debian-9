@@ -6,3 +6,5 @@ lb config --system normal
 lb config --debian-installer false
 lb config --linux-flavours armmp
 lb config --bootloader ""
+lb config --bootstrap-qemu-arch armhf
+lb config --bootstrap-qemu-static /usr/bin/qemu-arm-static
