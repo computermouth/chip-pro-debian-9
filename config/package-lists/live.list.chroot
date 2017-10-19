@@ -2,7 +2,18 @@ live-boot
 live-config
 live-config-systemd
 
+network-manager
+fake-hwclock
+ntp
+ntpdate
+sudo
+bluez
+alsa-utils
+ca-certificates
+curl
+initramfs-tools
+flash-kernel
+
 rtl8723ds-bt
 rtl8723ds-mp-driver-common
 rtl8723ds-mp-driver-modules
-

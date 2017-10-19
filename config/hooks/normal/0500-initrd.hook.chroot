@@ -1,0 +1,43 @@
+#!/bin/bash -x
+
+echo "########################################################################"
+echo "#                               initrd                                 #"
+echo "########################################################################"
+
+
+#this is needs to be done after flash-kernel and before a kernel.deb is installed
+#echo "NextThing C.H.I.P." > /etc/flash-kernel/machine
+echo "NextThing C.H.I.P. Pro" >> /etc/flash-kernel/machine
+
+cat << EOF >> /usr/share/flash-kernel/db/all.db
+
+Machine: NextThing C.H.I.P. Pro
+Boot-Kernel-Path: /boot/zImage
+DTB-Id: ntc-gr8-crumb.dtb
+Boot-DTB-Path: /boot/ntc-gr8-crumb.dtb
+Required-Packages: u-boot-tools
+
+EOF
+
+apt-get install -y --reinstall linux-image-$(uname -r)
+
+for i in boot/vmlinuz* ; do
+  kernel="$(basename "$i")"
+  version="${kernel##vmlinuz-}"
+  initrd="boot/initrd.img-${version}"
+  [ -f "$initrd" ] || update-initramfs -c -k "$version" || true
+  cp /boot/vm* /boot/zImage
+done
+
+# undo live-build's default flash-kernel diversion
+rm -f /usr/sbin/flash-kernel
+dpkg-divert --rename --remove /usr/sbin/flash-kernel
+
+flash-kernel
+flash-kernel --force ${version}
+
+dpkg-divert --rename --add /usr/sbin/flash-kernel
+ln -s /bin/true /usr/sbin/flash-kernel
+# redo live-build's default flash-kernel diversion
+# this whole hack here is really dumb
+# but seems preferable to editing users' live-build install

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "########################################################################"
+echo "#                                user                                  #"
+echo "########################################################################"
+
+echo -e "chip\nchip\n" | passwd
+
+echo -e "chip\nchip\n\n\n\n\n\nY\n" | adduser chip
+adduser chip sudo
