@@ -1,3 +1,8 @@
 live-boot
 live-config
 live-config-systemd
+
+rtl8723ds-bt
+rtl8723ds-mp-driver-common
+rtl8723ds-mp-driver-modules
+

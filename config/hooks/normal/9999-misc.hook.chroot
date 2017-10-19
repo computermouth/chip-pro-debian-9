@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash -x
+
+dpkg-query -Wf '${Package;-40}${Priority}\n' | grep -v essential
 
 apt-get clean
 apt-get autoclean
