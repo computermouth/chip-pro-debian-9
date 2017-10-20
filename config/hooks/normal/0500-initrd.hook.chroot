@@ -13,7 +13,7 @@ cat << EOF >> /usr/share/flash-kernel/db/all.db
 
 Machine: NextThing C.H.I.P. Pro
 Boot-Kernel-Path: /boot/zImage
-DTB-Id: ntc-gr8-crumb.dtb
+DTB-Id: sun5i-gr8-chip-pro.dtb
 Boot-DTB-Path: /boot/ntc-gr8-crumb.dtb
 Required-Packages: u-boot-tools
 
