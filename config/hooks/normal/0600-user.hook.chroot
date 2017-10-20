@@ -14,4 +14,3 @@ adduser chip adm
 adduser chip lp 
 adduser chip input 
 adduser chip bluetooth
-adduser chip i2c
