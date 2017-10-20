@@ -41,6 +41,6 @@ ln -s /bin/true /usr/sbin/flash-kernel
 # but seems preferable to editing users' live-build install
 
 apt-get install -y --reinstall linux-image-$version
-depmod -ae -F /boot/System.map*
+depmod -ae -F /boot/System.map* $version
 
 rm -rf /boot/*.bak
