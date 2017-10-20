@@ -2,18 +2,20 @@
 
 Requirements and process listed in `build.sh`
 
-No kernel/wifi/bt pulled from NTC repo, other packages pulled from Debian repo, all packages listed in `config/package-lists/live.list.chroot`
-
-Scripting happens in order in `config/hooks/normal`
-
 Live build scaffolding before git drops empty dirs:
 
 ```
-$ ls
+$ ls config/
 apt        build             hooks               includes.chroot     packages         rootfs
 archives   chroot            includes            includes.installer  packages.binary  source
 binary     common            includes.binary     includes.source     packages.chroot
 bootstrap  debian-installer  includes.bootstrap  package-lists       preseed
 ```
+
+includes*	-> flat file drop in (`includes.chroot/usr/bin/script` would install `script` in `/usr/bin/`)
+archives	-> debian repo stuff
+hooks		-> scripts (you'll only need to add to the `normal` ones)
+package-lists	-> list of packages
+packages*	-> paste in debs
 
 [Live Build Docs](https://debian-live.alioth.debian.org/live-manual/stable/manual/html/live-manual.en.html)
