@@ -19,8 +19,6 @@ Required-Packages: u-boot-tools
 
 EOF
 
-apt-get install -y --reinstall linux-image-$(uname -r)
-
 for i in boot/vmlinuz* ; do
   kernel="$(basename "$i")"
   version="${kernel##vmlinuz-}"
@@ -41,5 +39,8 @@ ln -s /bin/true /usr/sbin/flash-kernel
 # redo live-build's default flash-kernel diversion
 # this whole hack here is really dumb
 # but seems preferable to editing users' live-build install
+
+apt-get install -y --reinstall linux-image-$version
+depmod -ae -F /boot/System.map*
 
 rm -rf /boot/*.bak
