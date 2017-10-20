@@ -8,3 +8,10 @@ echo -e "chip\nchip\n" | passwd
 
 echo -e "chip\nchip\n\n\n\n\n\nY\n" | adduser chip
 adduser chip sudo
+adduser chip netdev 
+adduser chip dip 
+adduser chip adm 
+adduser chip lp 
+adduser chip input 
+adduser chip bluetooth
+adduser chip i2c
