@@ -41,3 +41,5 @@ ln -s /bin/true /usr/sbin/flash-kernel
 # redo live-build's default flash-kernel diversion
 # this whole hack here is really dumb
 # but seems preferable to editing users' live-build install
+
+rm -rf /boot/*.bak
